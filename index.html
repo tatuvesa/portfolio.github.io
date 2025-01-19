@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @font-face {
+            font-family: 'San Francisco Pro';
+            src: url('https://fonts.cdnfonts.com/s/17518/SF-Pro-Display-Regular.woff') format('woff');
+        }
+
+        body {
+            font-family: 'San Francisco Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .project.current {
+            background-color: #e0f7fa;
+        }
+
+        .project.future {
+            background-color: #ffcccc;
+        }
+
+        .highlight {
+            border-radius: 10px;
+            animation: highlight 2s ease-in-out;
+        }
+
+        @keyframes highlight {
+            from {
+                background-color: #57b4c0;
+            }
+
+            to {
+                background-color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Welcome to my portfolio website! Here you'll find some of my work, skills, and ways to connect with me.</p>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! My name is Tatu Vesalainen, and I am a passionate self-taught game developer and programmer. From the
+            moment I wrote my first line of code, I discovered a deep love for problem-solving and creating interactive
+            experiences. Programming has been my hobby, my passion, and my creative outlet. Whether it's crafting
+            gameplay mechanics or exploring new technologies, I am constantly learning and growing as a developer.</p>
+        <p>While I may not have extensive professional experience, my self-driven projects and dedication have equipped
+            me with a strong set of programming skills, including proficiency in JavaScript, Python and C#. When I'm not
+            coding, I enjoy video games and reading, which often inspire my creative work
+            in unexpected ways.</p>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>This project was a text adventure game created in a group of 4. The game involved flying all over the
+                    planet, with a database of most of the world's airports allowing the player to select their next
+                    destination. It was developed in Python and the text was printed into the console. Random events
+                    could occur when the player arrived at a new airport. The game calculated money based on the
+                    distance flown, but deducted points for poor fuel economy.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>This project was an extension of the first one, developed by the same group. The game was made
+                    playable on the web using Python for the backend and JavaScript for the frontend. It featured a nice
+                    interface and a map API for the world map. The plane's path was calculated to reflect the curvature
+                    of the Earth. A login system saved players' progress in a database.</p>
+            </div>
+            <div class="project current">
+                <h3>Current project</h3>
+                <p>This project is a Space Invaders reboot developed in Unity. The game features both single-player and
+                    multiplayer modes, with a minimalistic look similar to the original Space Invaders but with modern
+                    touches. The multiplayer mode has players competing on a timer to get the highest score, sharing a
+                    grid of invaders that resets to one of five possible layouts when all aliens are defeated. The game
+                    is hosted as WebGL on itch.io. You can play it <a href="https://tatuve.itch.io/spaceinvadersbutsick"
+                        target="">here</a>.</p>
+            </div>
+            <div class="project future">
+                <h3>Future Project</h3>
+                <p>Accurate physics simulation using MatPlotLib in python</p>
+                <p>Chess move generator algorithm</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out via:</p>
+        <ul>
+            <li>Email: <a href="mailto:Tatu@Vesalainen.eu">Tatu@Vesalainen.eu</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/tatu-vesalainen-929ab0192/" target="">Tatu Vesalainen</a>
+            </li>
+            <li>GitHub: <a href="https://github.com/tatuvesa" target="">tatuvesa</a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2025 Tatu Vesalainen. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.classList.add('highlight');
+                setTimeout(() => {
+                    targetElement.classList.remove('highlight');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>
