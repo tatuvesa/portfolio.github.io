@@ -7,7 +7,8 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nerd-fonts/2.1.0/css/JetBrainsMono.css">
-    <meta name="description" content="Welcome to Tatu Vesalainen's portfolio website. Explore my projects, skills, and ways to connect with me.">
+    <meta name="description"
+        content="Welcome to Tatu Vesalainen's portfolio website. Explore my projects, skills, and ways to connect with me.">
     <meta name="theme-color" content="#f4f4f9" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#333" media="(prefers-color-scheme: dark)">
     <style>
@@ -19,6 +20,19 @@
             color: #333;
             line-height: 1.6;
             transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        html {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
 
         body.dark-mode {
@@ -221,6 +235,31 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Customize scrollbar for Chrome, Safari and Opera */
+        body::-webkit-scrollbar {
+            width: 8px; /* Reduce width */
+        }
+
+        body::-webkit-scrollbar-track {
+            background: transparent; /* Make background transparent */
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #888; /* Color of the scroll thumb */
+            border-radius: 10px; /* Round the scroll thumb */
+            border: 2px solid transparent; /* Add space around thumb */
+            background-clip: content-box; /* Ensure border is visible */
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Darker color on hover */
+        }
+
+        /* Customize scrollbar for Edge */
+        body {
+            -ms-overflow-style: auto; /* Edge */
         }
     </style>
 </head>
