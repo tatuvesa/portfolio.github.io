@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @font-face {
             font-family: 'San Francisco Pro';
@@ -185,17 +186,28 @@
         }
 
         button#dark-mode-toggle {
-            background-color: #57b4c0;
-            color: #fff;
+            background-color: transparent;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 1.5rem;
+            color: #57b4c0;
+            transition: color 0.3s;
         }
 
         button#dark-mode-toggle:hover {
-            background-color: #459ca0;
+            color: #459ca0;
+        }
+
+        body.dark-mode button#dark-mode-toggle .fa-moon {
+            display: none;
+        }
+
+        body.dark-mode button#dark-mode-toggle .fa-sun {
+            display: inline;
+        }
+
+        button#dark-mode-toggle .fa-sun {
+            display: none;
         }
     </style>
 </head>
@@ -204,7 +216,10 @@
     <header>
         <h1>My Portfolio</h1>
         <p>Welcome to my portfolio website! Here you'll find some of my work, skills, and ways to connect with me.</p>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <button id="dark-mode-toggle">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
     </header>
     <nav>
         <a href="#about">About Me</a>
